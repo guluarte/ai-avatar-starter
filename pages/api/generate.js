@@ -21,7 +21,7 @@ const generateAction = async (req, res) => {
         },
         method: 'POST',
         body: JSON.stringify({
-          inputs: input,
+          inputs: `fornite art style, 4K, ${input}`,
         }),
       }
     );
