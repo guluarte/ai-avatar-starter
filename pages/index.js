@@ -137,14 +137,11 @@ const Home = () => {
         )}
       </div>
       <div className="badge-container grow">
-        <a
-          href="https://guluarte.com"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <div className="badge">
-           guluarte.com
-          </div>
+        <a href="https://buildspace.so" target="_blank" rel="noreferrer">
+          <div className="badge">buildspace.so</div>
+        </a>{" "}
+        <a href="https://guluarte.com" target="_blank" rel="noreferrer">
+          <div className="badge">guluarte.com</div>
         </a>
       </div>
     </div>
