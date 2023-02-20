@@ -24,7 +24,7 @@ const generateAction = async (req, res) => {
 
   // Illustration of jupiter clouds by dan mumford, yellow planets, green tinted colors, uhd
 
-  const basePrompt = `Illustration of rodo hale, ${input}, roblox, fornite style art, fantasy landscape, epic scene, high exposure, highly detailed, fantastical, vibrant colors, uhd`;
+  const basePrompt = `Illustration of rodo hale, roblox, fornite style art, fantasy landscape, epic scene, high exposure, highly detailed, fantastical, vibrant colors, uhd, ${input}`;
 
   const response = await fetch(
     `https://api-inference.huggingface.co/models/guluarte/fornite-style-avatar`,
