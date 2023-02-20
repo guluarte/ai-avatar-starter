@@ -1,11 +1,11 @@
 import Head from "next/head";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import buildspaceLogo from "../assets/buildspace-logo.png";
 
 const Home = () => {
+  const defaultPrompt = "DOG IN ZELDA";
   const maxRetries = 20;
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState(defaultPrompt);
   const [img, setImg] = useState("");
   const [retry, setRetry] = useState(0);
   const [isGenerating, setIsGenerating] = useState(false);
@@ -63,7 +63,7 @@ const Home = () => {
     // Set final prompt here
     setFinalPrompt(input);
     // Remove content from input box
-    setInput("");
+    //setInput(defaultPrompt);
     setImg(data.image);
 
     setIsGenerating(false);
@@ -102,15 +102,15 @@ const Home = () => {
   return (
     <div className="root">
       <Head>
-        <title>Fortnite Style AI Avatar Generator</title>
+        <title>Game AI Avatar Generator</title>
       </Head>
       <div className="container">
         <div className="header">
           <div className="header-title">
-            <h1>Fortnite Style AI Avatar Generator</h1>
+            <h1>Game AI Avatar Generator</h1>
           </div>
           <div className="header-subtitle">
-            <h2>Turn your photo into a fornite character</h2>
+            <h2>Turn your promt into a videogame character</h2>
           </div>
           <div className="prompt-container">
             <input className="prompt-box" value={input} onChange={onChange} />
@@ -130,7 +130,7 @@ const Home = () => {
         </div>
         {img && (
           <div className="output-content">
-            <Image src={img} width={512} height={512} alt={finalPrompt} />
+            <img src={img} width={512} height={512} alt={finalPrompt} />
             {/* Add prompt here */}
             <p>{finalPrompt}</p>
           </div>
@@ -138,13 +138,12 @@ const Home = () => {
       </div>
       <div className="badge-container grow">
         <a
-          href="https://buildspace.so/builds/ai-avatar"
+          href="https://guluarte.com"
           target="_blank"
           rel="noreferrer"
         >
           <div className="badge">
-            <Image src={buildspaceLogo} alt="buildspace logo" />
-            <p>build with buildspace</p>
+           guluarte.com
           </div>
         </a>
       </div>
