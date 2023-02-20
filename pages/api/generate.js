@@ -40,13 +40,13 @@ const generateAction = async (req, res) => {
     }
   );
 
-  
+
   // Check for different statuses to send proper payload
   if (response.ok) {
     const buffer = await response.arrayBuffer();
     // Make sure to change to base64
     const filename = `/images/generated/${getRandomFileName()}.png`;
-    fs.writeFileSync(`./public${filename}`, Buffer.from(buffer));
+    fs.writeFileSync(`public${filename}`, Buffer.from(buffer));
     res.status(200).json({ image: filename });
   } else if (response.status === 503) {
     const json = await response.json();
