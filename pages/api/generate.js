@@ -40,6 +40,7 @@ const generateAction = async (req, res) => {
     }
   );
 
+  
   // Check for different statuses to send proper payload
   if (response.ok) {
     const buffer = await response.arrayBuffer();
