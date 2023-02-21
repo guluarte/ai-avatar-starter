@@ -12,8 +12,8 @@ const Home = () => {
   const [videogame, setVideogame] = useState(defaultVideoGame);
   const [landscape, setLandscape] = useState(defaultLandscape);
   const [img, setImg] = useState("");
-  const [retry, setRetry] = useState(2000);
-  const [isGenerating, setIsGenerating] = useState(true);
+  const [retry, setRetry] = useState(0);
+  const [isGenerating, setIsGenerating] = useState(false);
   const [finalPrompt, setFinalPrompt] = useState("");
   // Number of retries left
   const [retryCount, setRetryCount] = useState(maxRetries);
