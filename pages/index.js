@@ -4,9 +4,9 @@ import { useEffect, useState } from "react";
 import buildspaceLogo from "../assets/buildspace-logo.png";
 
 const Home = () => {
-  const defaultPrompt = "dog playing with a cat";
-  const defaultVideoGame = "roblox";
-  const defaultLandscape = "fantasy";
+  const defaultPrompt = "big dog";
+  const defaultVideoGame = "call of duty";
+  const defaultLandscape = "alien";
   const maxRetries = 20;
   const [input, setInput] = useState(defaultPrompt);
   const [videogame, setVideogame] = useState(defaultVideoGame);
