@@ -12,8 +12,8 @@ const Home = () => {
   const [videogame, setVideogame] = useState(defaultVideoGame);
   const [landscape, setLandscape] = useState(defaultLandscape);
   const [img, setImg] = useState("");
-  const [retry, setRetry] = useState(0);
-  const [isGenerating, setIsGenerating] = useState(false);
+  const [retry, setRetry] = useState(2000);
+  const [isGenerating, setIsGenerating] = useState(true);
   const [finalPrompt, setFinalPrompt] = useState("");
   // Number of retries left
   const [retryCount, setRetryCount] = useState(maxRetries);
@@ -151,7 +151,7 @@ const Home = () => {
                         <>
                           <br />
                           <span>just {retry} seconds more</span>
-                          <span>
+                          <span className="span-text">
                             model still loading, the dev is too poor to pay for
                             a dedicated GPU LOL
                           </span>

@@ -175,6 +175,13 @@ body {
   margin: 0;
 }
 
+.span-text {
+  overflow-wrap: break-word;
+  max-width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .loading {
   opacity: 0.7;
   cursor: default;
