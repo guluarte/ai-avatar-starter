@@ -33,9 +33,7 @@ body {
   flex: 0 0 auto;
   flex-flow: row nowrap;
   gap: 10px;
-  /* height: fit-content; */
-  height: 100%;
-  overflow: auto;
+  margin: 30px;
   position: relative;
   width: auto;
   gap: 64px;

@@ -28,7 +28,7 @@ const generateAction = async (req, res) => {
 
   // roblox, fornite, zelda, mario, call of duty
 
-  const videogameStyle = "roblox"
+  const videogameStyle = "fornite"
   const landscape = "fantasy"
 
   const basePrompt = `rodo hale, ${input}, ${videogameStyle} style art, ${landscape} landscape, epic scene, high exposure, highly detailed, fantastical, vibrant colors, uhd`;
