@@ -31,7 +31,7 @@ const generateAction = async (req, res) => {
   const videogameStyle = "fornite"
   const landscape = "fantasy"
 
-  const basePrompt = `rodo hale, ${input}, ${videogameStyle} style art, ${landscape} landscape, epic scene, high exposure, highly detailed, fantastical, vibrant colors, uhd`;
+  const basePrompt = `rodo hale, ${input}, ${videogameStyle} style art, ${landscape} landscape, epic scene, high exposure, highly detailed, fantastical, vibrant colors, uhd, looking at the camera`;
 
   console.log(basePrompt)
 
