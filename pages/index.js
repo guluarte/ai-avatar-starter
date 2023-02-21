@@ -180,7 +180,7 @@ const Home = () => {
         <a href="https://buildspace.so" target="_blank" rel="noreferrer">
           <p>
             <Image src={buildspaceLogo} alt="buildspace logo" height={20} />{" "}
-            build with buildspace 🧡
+            build with<br /> buildspace 🧡
           </p>
         </a>
       </div>
