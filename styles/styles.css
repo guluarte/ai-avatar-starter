@@ -271,7 +271,7 @@ body {
     justify-content: center;
     max-width: 700px;
     width: 100%;
-    padding: 50px;
+    /* padding: 50px; */
   }
 
   .prompt-container {
