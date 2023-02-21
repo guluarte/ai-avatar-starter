@@ -112,7 +112,7 @@ body {
   letter-spacing: 0px;
   line-height: 1.6em;
   text-align: start;
-  color: rgba(255, 255, 255, .97);
+  color: rgba(255, 255, 255, 0.97);
   text-decoration: none;
   text-transform: uppercase;
 }
@@ -129,7 +129,6 @@ body {
   display: flex;
   place-content: center;
   align-items: center;
-  justify-content: flex-end;
   flex: 0 0 auto;
   flex-flow: row nowrap;
   gap: 12px;
@@ -143,18 +142,17 @@ body {
 .generate-button {
   place-content: flex-start;
   align-items: flex-start;
-  background-color: #3949b6;
-  border-radius: 100px;
+  justify-content: center;
+  text-align: center;
   display: flex;
   flex: 0 0 auto;
   flex-flow: column nowrap;
   gap: 10px;
   height: min-content;
   overflow: hidden;
-  padding: 16px 24px;
   position: relative;
   text-decoration: none;
-  width: min-content;
+  /* width: min-content; */
   will-change: transform;
   cursor: pointer;
 }
@@ -163,12 +161,15 @@ body {
   outline: none;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   flex-shrink: 0;
   transform: none;
 }
 
 .generate p {
+  background-color: #3949b6;
+  padding: 16px 24px;
+  border-radius: 100px;
   color: rgb(255, 255, 255);
   margin: 0;
 }
@@ -206,8 +207,13 @@ body {
   letter-spacing: -0.5px;
   line-height: 1em;
   color: #fff;
-  padding: 12px;
+  padding: 3px;
   text-decoration: none;
+}
+
+.badge-container a p {
+  display: flex;
+  align-items: center;
 }
 
 .badge {

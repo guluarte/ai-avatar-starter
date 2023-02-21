@@ -1,11 +1,16 @@
 import Head from "next/head";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import buildspaceLogo from "../assets/buildspace-logo.png";
 
 const Home = () => {
-  const defaultPrompt = "DOG IN ZELDA";
+  const defaultPrompt = "dog playing with a cat";
+  const defaultVideoGame = "roblox";
+  const defaultLandscape = "fantasy";
   const maxRetries = 20;
   const [input, setInput] = useState(defaultPrompt);
+  const [videogame, setVideogame] = useState(defaultVideoGame);
+  const [landscape, setLandscape] = useState(defaultLandscape);
   const [img, setImg] = useState("");
   const [retry, setRetry] = useState(0);
   const [isGenerating, setIsGenerating] = useState(false);
@@ -15,6 +20,12 @@ const Home = () => {
   // Add this function
   const onChange = (event) => {
     setInput(event.target.value);
+  };
+  const onChangeVideoGame = (event) => {
+    setVideogame(event.target.value);
+  };
+  const onChangeLandscape = (event) => {
+    setLandscape(event.target.value);
   };
   const generateAction = async () => {
     console.log("Generating...");
@@ -42,7 +53,7 @@ const Home = () => {
       headers: {
         "Content-Type": "image/jpeg",
       },
-      body: JSON.stringify({ input }),
+      body: JSON.stringify({ input, videogame, landscape }),
     });
 
     const data = await response.json();
@@ -110,16 +121,45 @@ const Home = () => {
             <h1>Game AI Avatar Generator</h1>
           </div>
           <div className="header-subtitle">
-            <h2>Turn your promt into a videogame character</h2>
+            <h2>Turn your prompt into a videogame character</h2>
           </div>
           <div className="prompt-container">
+            <h3>I'm a</h3>
             <input className="prompt-box" value={input} onChange={onChange} />
-
+            <h3>in the game:</h3>
+            <input
+              className="prompt-box"
+              value={videogame}
+              onChange={onChangeVideoGame}
+            />
+            <h3>chilling in a [...] landscape:</h3>
+            <input
+              className="prompt-box"
+              value={landscape}
+              onChange={onChangeLandscape}
+            />
             <div className="prompt-buttons">
               <a className="generate-button" onClick={generateAction}>
                 <div className="generate">
                   {isGenerating ? (
-                    <span className="loader"></span>
+                    <>
+                      <p>
+                      <span className="loader"></span>
+                      </p>
+                      
+                      {retry > 0 ? (
+                        <>
+                          <br />
+                          <span>just {retry} seconds more</span>
+                          <span>
+                            model still loading, the dev is too poor to pay for
+                            a dedicated GPU LOL
+                          </span>
+                        </>
+                      ) : (
+                        <></>
+                      )}
+                    </>
                   ) : (
                     <p>Generate</p>
                   )}
@@ -138,10 +178,10 @@ const Home = () => {
       </div>
       <div className="badge-container grow">
         <a href="https://buildspace.so" target="_blank" rel="noreferrer">
-          <div className="badge">buildspace.so</div>
-        </a>{" "}
-        <a href="https://guluarte.com" target="_blank" rel="noreferrer">
-          <div className="badge">guluarte.com</div>
+          <p>
+            <Image src={buildspaceLogo} alt="buildspace logo" height={20} />{" "}
+            build with buildspace 🧡
+          </p>
         </a>
       </div>
     </div>

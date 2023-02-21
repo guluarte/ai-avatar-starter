@@ -19,6 +19,8 @@ const generateAction = async (req, res) => {
   console.log("Received request");
 
   const input = JSON.parse(req.body).input;
+  const videogame = JSON.parse(req.body).videogame;
+  const landscape = JSON.parse(req.body).landscape;
 
   // Art Medium + The actual things you want in the image + Art Styles (could be an artist or an actual style like Renaissance) + Modifications (extra details on how the image should look)
 
@@ -28,10 +30,10 @@ const generateAction = async (req, res) => {
 
   // roblox, fornite, zelda, mario, call of duty
 
-  const videogameStyle = "fornite"
-  const landscape = "fantasy"
+  // const videogameStyle = "fornite"
+  // const landscape = "fantasy"
 
-  const basePrompt = `rodo hale, ${input}, ${videogameStyle} style art, ${landscape} landscape, epic scene, high exposure, highly detailed, fantastical, vibrant colors, uhd, looking at the camera`;
+  const basePrompt = `avatar of rodo hale as a ${input}, ${videogame} style art, ${landscape} landscape, epic scene, high exposure, highly detailed, fantastical, vibrant colors, uhd, looking at the camera`;
 
   console.log(basePrompt)
 
