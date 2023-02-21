@@ -144,9 +144,9 @@ const Home = () => {
                   {isGenerating ? (
                     <>
                       <p>
-                      <span className="loader"></span>
+                        <span className="loader"></span>
                       </p>
-                      
+
                       {retry > 0 ? (
                         <>
                           <br />
@@ -176,14 +176,19 @@ const Home = () => {
           </div>
         )}
       </div>
-      <div className="badge-container grow">
-        <a href="https://buildspace.so" target="_blank" rel="noreferrer">
-          <p>
-            <Image src={buildspaceLogo} alt="buildspace logo" height={20} />{" "}
-            build with<br /> buildspace 🧡
-          </p>
-        </a>
-      </div>
+      {!isGenerating ? (
+        <div className="badge-container grow">
+          <a href="https://buildspace.so" target="_blank" rel="noreferrer">
+            <p>
+              <Image src={buildspaceLogo} alt="buildspace logo" height={20} />{" "}
+              build with
+              <br /> buildspace 🧡
+            </p>
+          </a>
+        </div>
+      ) : (
+        <></>
+      )}
     </div>
   );
 };
