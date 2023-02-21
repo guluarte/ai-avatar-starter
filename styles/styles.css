@@ -248,6 +248,7 @@ body {
 
 .output-content {
   width: 512px;
+  max-width: 90%;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -315,6 +316,13 @@ body {
     width: 100%;
   }
 }
+
+@media (max-width: 600px) {
+  .container {
+    width: 100% !important;
+  }
+}
+
 
 /* Loading ring animation */
 .loader {
